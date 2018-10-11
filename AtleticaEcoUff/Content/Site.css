@@ -9,9 +9,10 @@
 
 .jumbotron {
     background-image: url(vemser.png);
-    background-size: contain;
+    background-size: cover;
     color: whitesmoke;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
+    padding-right: 250px;
 }
 
 /* Set padding to keep content from hitting the edges */
