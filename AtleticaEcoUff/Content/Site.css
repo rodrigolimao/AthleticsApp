@@ -1,15 +1,21 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #ffbe0f;
-    color: #0f79a9;
+    background-color: #0f79a9;
+    color: #ffbe0f;
     /*#0f79a9 blue*/
     /*#ffbe0f yellow*/
 }
 
 .jumbotron {
-    background-image: url(atletica.png);
+    background-image: url(vemser.png);
+    background-size:cover;
     color:whitesmoke;
+}
+
+. nav navbar-nav {
+    background-color: #0f79a9;
+    color: #ffbe0f;
 }
 
 .btn btn-primary btn-lg {
