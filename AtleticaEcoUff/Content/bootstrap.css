@@ -4967,10 +4967,11 @@ a.badge:focus {
 .jumbotron .h1 {
   color: inherit;
   padding-bottom: 40px;
+  font-size:22px;
 }
 .jumbotron p {
   margin-bottom: 15px;
-  font-size: 21px;
+  font-size: 20 px;
   font-weight: 200;
 }
 .jumbotron > hr {
