@@ -10,9 +10,9 @@
 .jumbotron {
     background-image: url(atletica.png);
     background-size: cover;
-    color: whitesmoke;
+    color: #ffbe0f;
     padding-bottom: 200px;
-    padding-right: 250px;
+    padding-right: 290px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -34,3 +34,28 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-inverse .navbar-brand {
+    color: #ffbe0f;
+}
+
+.navbar-inverse {
+    background-color: #0f79a9;
+}
+
+.navbar-nav > li > a {
+    color: #ffbe0f !important;
+}
+
+    .navbar-nav > li > a:hover {
+        color: whitesmoke !important;
+    }
+
+.title {
+    color: #ffbe0f !important;
+}
+
+.title:hover {
+        color: whitesmoke !important;
+    }
+
