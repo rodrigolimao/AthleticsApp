@@ -9,15 +9,15 @@ namespace AtleticaEcoUff.Models
     public partial class Athlete
     {
         [Key]
-        [Display(Name ="Athletes ID")]
+        [Display(Name ="Athlete's ID")]
         public int athlete_id { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Athletes Name")]
+        [Display(Name = "Athlete's Name")]
         public string athlete_name { get; set; }
 
-        [Display(Name = "Athletes Age")]
+        [Display(Name = "Athlete's Age")]
         public int athlete_age { get; set; }
 
         [Display(Name = "Sport ID")]
