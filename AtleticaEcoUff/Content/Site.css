@@ -9,7 +9,7 @@
 
 .jumbotron {
     background-image: url(vemser.png);
-    background-size: cover;
+    background-size: contain;
     color: whitesmoke;
     padding-bottom: 100px;
 }
