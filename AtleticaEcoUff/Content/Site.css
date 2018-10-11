@@ -14,15 +14,11 @@
     vertical-align:text-top;
 }
 
-. nav navbar-nav {
+.nav navbar-nav {
     background-color: #0f79a9;
     color: #ffbe0f;
 }
 
-.btn btn-primary btn-lg {
-    background-color: #ffbe0f;
-    color: #0f79a9;
-}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
