@@ -4265,8 +4265,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px;
-    background-color: #0f79a9;
-    color: #ffbe0f;
+
 }
 .navbar-fixed-bottom {
   bottom: 0;
@@ -4329,8 +4328,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
         padding-top: 10px;
         padding-bottom: 10px;
         line-height: 20px;
-        background-color: #0f79a9;
-        color: #ffbe0f;
+        background-color: #ffbe0f;
     }
 
 @media (max-width: 767px) {
