@@ -37,6 +37,7 @@ textarea {
 
 .navbar-inverse .navbar-brand {
     color: #ffbe0f;
+    font-weight: bold;
 }
 
 .navbar-inverse {
@@ -45,6 +46,7 @@ textarea {
 
 .navbar-nav > li > a {
     color: #ffbe0f !important;
+    font-weight:bold;
 }
 
     .navbar-nav > li > a:hover {
