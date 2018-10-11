@@ -1,11 +1,22 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:gold;
+    background-color: #ffbe0f;
+    color: #0f79a9;
+    /*#0f79a9 blue*/
+    /*#ffbe0f yellow*/
 }
 
+.jumbotron {
+    background-image: url(atletica.png);
+    background-size: cover;
+    color:whitesmoke;
+}
 
-
+.btn btn-primary btn-lg {
+    background-color: #ffbe0f;
+    color: #0f79a9;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
