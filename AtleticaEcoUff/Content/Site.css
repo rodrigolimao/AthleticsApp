@@ -1,8 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #0f79a9;
-    color: #ffbe0f;
+    background-color: whitesmoke;
+    color: #0f79a9;
     /*#0f79a9 blue*/
     /*#ffbe0f yellow*/
 }
@@ -11,6 +11,7 @@
     background-image: url(vemser.png);
     background-size:cover;
     color:whitesmoke;
+    vertical-align:text-top;
 }
 
 . nav navbar-nav {
