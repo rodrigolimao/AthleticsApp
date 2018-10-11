@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtleticaEcoUff", "AtleticaEcoUff\AtleticaEcoUff.csproj", "{D1795F56-CE81-4D69-BCBC-4349000C98C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtleticaEcoUff.Tests", "AtleticaEcoUff.Tests\AtleticaEcoUff.Tests.csproj", "{75CB10F6-EA02-4647-8819-1F1444D78F65}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1795F56-CE81-4D69-BCBC-4349000C98C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1795F56-CE81-4D69-BCBC-4349000C98C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1795F56-CE81-4D69-BCBC-4349000C98C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1795F56-CE81-4D69-BCBC-4349000C98C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CB10F6-EA02-4647-8819-1F1444D78F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CB10F6-EA02-4647-8819-1F1444D78F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CB10F6-EA02-4647-8819-1F1444D78F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CB10F6-EA02-4647-8819-1F1444D78F65}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5DAFC58F-24B0-446E-8371-E8F3DB0850A5}
+	EndGlobalSection
+EndGlobal
