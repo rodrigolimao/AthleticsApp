@@ -35,12 +35,23 @@
         <td>
             @Html.DisplayFor(modelItem => item.sport_awards)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.sport_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.sport_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.sport_id })
-        </td>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.sport_id })
+            </td>
+
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.sport_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.sport_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.sport_id })
+            </td>
+        }
+
     </tr>
 }
-
 </table>

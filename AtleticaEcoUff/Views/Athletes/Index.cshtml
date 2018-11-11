@@ -6,10 +6,12 @@
 }
 
 <h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -24,7 +26,8 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Sport.sport_name)
@@ -35,12 +38,24 @@
         <td>
             @Html.DisplayFor(modelItem => item.athlete_age)
         </td>
+
+        @if (!User.Identity.IsAuthenticated)
+        {
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.athlete_id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.athlete_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.athlete_id })
+            @Html.ActionLink("Details", "Details", new { id = item.athlete_id })
         </td>
-    </tr>
-}
+
+        }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.athlete_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.athlete_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.athlete_id })
+                </td>
+            }
+
+        </tr>
+    }
 
 </table>
