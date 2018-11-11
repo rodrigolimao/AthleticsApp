@@ -10,10 +10,12 @@ using AtleticaEcoUff.Models;
 
 namespace AtleticaEcoUff.Controllers
 {
+    [Authorize]
     public class AthletesController : Controller
     {
         private AthleticsModel db = new AthleticsModel();
 
+        [OverrideAuthorization]
         // GET: Athletes
         public ActionResult Index()
         {
@@ -21,6 +23,7 @@ namespace AtleticaEcoUff.Controllers
             return View(athletes.ToList());
         }
 
+        [OverrideAuthorization]
         // GET: Athletes/Details/5
         public ActionResult Details(int?  id)
         {
