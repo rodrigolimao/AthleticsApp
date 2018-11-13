@@ -34,7 +34,7 @@ namespace AtleticaEcoUff
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -54,9 +54,9 @@ namespace AtleticaEcoUff
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "207299746830221",
+               appSecret: "6c2c370ce32dfef6814bee817003c9ae");
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
@@ -66,3 +66,4 @@ namespace AtleticaEcoUff
         }
     }
 }
+
