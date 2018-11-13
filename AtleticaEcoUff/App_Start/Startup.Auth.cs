@@ -46,9 +46,9 @@ namespace AtleticaEcoUff
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "c26ea0d9-a62a-4d25-b036-ddca09073c31",
+                clientSecret: "wabZSDL@![umkrBUV08613_");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
