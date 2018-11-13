@@ -58,11 +58,11 @@ namespace AtleticaEcoUff
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "395615254220-2j80cqnimo2dfhaudniab9i5bj3o0vmh.apps.googleusercontent.com",
+                ClientSecret = "STm6WmJ3GHjaeBgd7ldj64R8"
+            });
         }
     }
 }
