@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using AtleticaEcoUff.Models;
+using System.Configuration;
 
 namespace AtleticaEcoUff
 {
@@ -47,21 +48,21 @@ namespace AtleticaEcoUff
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication(
-                clientId: "c26ea0d9-a62a-4d25-b036-ddca09073c31",
-                clientSecret: "wabZSDL@![umkrBUV08613_");
+                clientId: ConfigurationManager.AppSettings["MicrosoftClientId"],
+                clientSecret: ConfigurationManager.AppSettings["MicrosoftClientSecret"]);
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "207299746830221",
-               appSecret: "6c2c370ce32dfef6814bee817003c9ae");
+               appId: ConfigurationManager.AppSettings["FacebookClientId"],
+               appSecret: ConfigurationManager.AppSettings["FacebookClientSecret"]);
 
             app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             {
-                ClientId = "395615254220-2j80cqnimo2dfhaudniab9i5bj3o0vmh.apps.googleusercontent.com",
-                ClientSecret = "STm6WmJ3GHjaeBgd7ldj64R8"
+                ClientId = ConfigurationManager.AppSettings["GoogleClientId"],
+                ClientSecret = ConfigurationManager.AppSettings["GoogleClientSecret"]
             });
         }
     }
