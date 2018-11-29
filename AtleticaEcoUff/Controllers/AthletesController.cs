@@ -13,37 +13,61 @@ namespace AtleticaEcoUff.Controllers
     [Authorize]
     public class AthletesController : Controller
     {
-        private AthleticsModel db = new AthleticsModel();
+        //disable the automatic db connn
+        //private AthleticsModel db = new AthleticsModel();
+
+        private IAthletesMock db;
+
+        public AthletesController()
+        {
+            this.db = new EFAthletes();
+        }
+
+
+        // mock constructor
+        public AthletesController(IAthletesMock mock)
+
+        {
+            this.db = mock;
+        }
+
 
         [OverrideAuthorization]
         // GET: Athletes
         public ActionResult Index()
         {
-            var athletes = db.Athletes.Include(a => a.Sport);
-            return View(athletes.ToList());
+            var sports = db.Athlete.Include(a => a.Sport);
+            return View("Index", sports.ToList());
         }
 
         [OverrideAuthorization]
         // GET: Athletes/Details/5
-        public ActionResult Details(int?  id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
-            Athlete athlete = db.Athletes.Find(id);
+
+            //Athlete athlete = db.Athletes.Find(id);
+            Athlete athlete = db.Athlete.SingleOrDefault(a => a.athlete_id == id);
+
             if (athlete == null)
             {
-                return HttpNotFound();
+                //return HttpNotFound();
+                return View("Error");
+
             }
-            return View(athlete);
+            return View("Details", athlete);
+
         }
 
         // GET: Athletes/Create
         public ActionResult Create()
         {
             ViewBag.sport_id = new SelectList(db.Sports, "sport_id", "sport_name");
-            return View();
+            return View("Create");
         }
 
         // POST: Athletes/Create
@@ -55,13 +79,13 @@ namespace AtleticaEcoUff.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Athletes.Add(athlete);
-                db.SaveChanges();
+
+                db.Save(athlete);
                 return RedirectToAction("Index");
             }
 
             ViewBag.sport_id = new SelectList(db.Sports, "sport_id", "sport_name", athlete.sport_id);
-            return View(athlete);
+            return View("Create", athlete);
         }
 
         // GET: Athletes/Edit/5
@@ -69,15 +93,17 @@ namespace AtleticaEcoUff.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
-            Athlete athlete = db.Athletes.Find(id);
+            Athlete athlete = db.Athlete.SingleOrDefault(a => a.athlete_id == id);
             if (athlete == null)
             {
-                return HttpNotFound();
+                //return HttpNotFound();
+                return View("Error");
             }
             ViewBag.sport_id = new SelectList(db.Sports, "sport_id", "sport_name", athlete.sport_id);
-            return View(athlete);
+            return View("Edit", athlete);
         }
 
         // POST: Athletes/Edit/5
@@ -89,12 +115,12 @@ namespace AtleticaEcoUff.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(athlete).State = EntityState.Modified;
-                db.SaveChanges();
+
+                db.Save(athlete);
                 return RedirectToAction("Index");
             }
             ViewBag.sport_id = new SelectList(db.Sports, "sport_id", "sport_name", athlete.sport_id);
-            return View(athlete);
+            return View("Edit", athlete);
         }
 
         // GET: Athletes/Delete/5
@@ -102,34 +128,52 @@ namespace AtleticaEcoUff.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View("Error");
             }
-            Athlete athlete = db.Athletes.Find(id);
+            //Athlete athlete = db.Athletes.Find(id);
+            Athlete athlete = db.Athlete.SingleOrDefault(a => a.athlete_id == id);
+
             if (athlete == null)
             {
-                return HttpNotFound();
+                //return HttpNotFound();
+                return View("Error");
             }
-            return View(athlete);
+            return View("Delete", athlete);
         }
 
         // POST: Athletes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id)
         {
-            Athlete athlete = db.Athletes.Find(id);
-            db.Athletes.Remove(athlete);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+            //Athlete athlete = db.Athletes.Find(id);
+            Athlete athlete = db.Athlete.SingleOrDefault(a => a.athlete_id == id);
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
+            // db.Athletes.Remove(athlete);
+            // db.SaveChanges();
+            db.Delete(athlete);
+            if (id == null)
             {
-                db.Dispose();
+                return View("Error");
             }
-            base.Dispose(disposing);
+            if (athlete == null)
+            {
+                return View("Error");
+            }
+
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            //protected override void Dispose(bool disposing)
+            //{
+            //    if (disposing)
+            //    {
+            //        db.Dispose();
+            //    }
+            //    base.Dispose(disposing);
+            //}
         }
     }
 }

@@ -206,6 +206,8 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Athlete.cs" />
     <Compile Include="Models\AthleticsModel.cs" />
+    <Compile Include="Models\EFAthletes.cs" />
+    <Compile Include="Models\IAthletesMock.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Sport.cs" />
